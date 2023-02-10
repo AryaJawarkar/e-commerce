@@ -57,7 +57,7 @@ try {
   const singleProduct = resp.data;
   dispatch({type:GET_SINGLE_PRODUCT_SUCCESS,payload:singleProduct})
 } catch (error) {
-  
+  dispatch({type:GET_SINGLE_PRODUCT_ERROR})
 }
 }
 
