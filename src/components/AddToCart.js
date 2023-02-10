@@ -1,19 +1,68 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { FaCheck } from 'react-icons/fa'
-import { useCartContext } from '../context/cart_context'
-import AmountButtons from './AmountButtons'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaCheck } from "react-icons/fa";
+import { useCartContext } from "../context/cart_context";
+import AmountButtons from "./AmountButtons";
 
-const AddToCart = () => {
-  return <h4>addToCart </h4>
+const AddToCart = ({ product }) => {
+  const { id, stock, colors } = product;
+
+  const [mainColor, setMainColor] = useState(colors[0]);
+const [amount,setAmount]= useState(1)
+
+const increase =()=>{
+  setAmount((oldAmt)=>{
+let tempAmt = oldAmt + 1;
+if(tempAmt > stock){
+tempAmt = stock;
 }
+return tempAmt
+  })
+}
+
+const decrease =()=>{
+  setAmount((oldAmt)=>{
+    let tempAmt = oldAmt - 1;
+    if(tempAmt < 1){
+    tempAmt = 1;
+    }
+    return tempAmt
+      })
+}
+
+
+  return (
+    <Wrapper>
+      <div className="colors">
+        <span>colors : </span>
+        <div>
+          {colors.map((color, index) => {
+            return (
+              <button key={index} 
+              className={`${mainColor === color?'color-btn active':'color-btn'}`}
+              style={{background:color}}
+              onClick={()=>setMainColor(color)}
+              >
+                {mainColor === color?<FaCheck />: null}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div className="btn-container">
+        <AmountButtons amount={amount} inc={increase} dec={decrease}/>
+        <Link to='/cart' className="btn">add to cart</Link>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   margin-top: 2rem;
   .colors {
     display: grid;
-    grid-template-columns: 125px 1fr;
+    grid-template-columns: 135px 1fr;
     align-items: center;
     margin-bottom: 1rem;
     span {
@@ -51,7 +100,7 @@ const Wrapper = styled.section`
 
   .btn {
     margin-top: 1rem;
-    width: 140px;
+    width: 200px;
   }
-`
-export default AddToCart
+`;
+export default AddToCart;
