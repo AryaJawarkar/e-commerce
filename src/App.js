@@ -2,12 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 
-import {Home,About,Checkout,Cart,Private,Error,Products,SingleProduct,AuthWrapper} from './pages'
+import {Home,About,Checkout,Cart,Error,Products,SingleProduct} from './pages'
 
 
 function App() {
   return(
-    <AuthWrapper>
      <Router>
      <Navbar />
      <Sidebar />
@@ -19,17 +18,12 @@ function App() {
 <Route path='/products/:id' element={<SingleProduct />} />
 <Route 
 path ='/checkout'
-element={
-  <Private>
-    <Checkout />
-  </Private>
-} 
+element={<Checkout />} 
 />
 <Route path='*' element={<Error />} />
   </Routes>
   <Footer />
   </Router>
-    </AuthWrapper>
   )
 }
 
