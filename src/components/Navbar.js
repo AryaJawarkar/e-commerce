@@ -17,7 +17,7 @@ const Nav = () => {
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/">
+          <Link to="/e-commerce">
             <Logo />
           </Link>
           <button type="button" className="nav-toggle" onClick={openSidebar}>

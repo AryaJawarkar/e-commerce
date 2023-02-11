@@ -9,7 +9,7 @@ const CheckoutPage = () => {
     <PageHero title='checkout'/>
     <Wrapper className='page'>
       <h1>Thanks for shopping</h1>
-      <Link to='/' className='btn'>back home</Link>
+      <Link to='/e-commerce' className='btn'>back home</Link>
     </Wrapper>
   </main>
 }
