@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageHero } from '../components'
-import aboutImg from '../assets/hero-bcg.jpeg'
+import aboutImg from '../assets/hero-bcg.jpg'
 
 const AboutPage = () => {
   return <main>
     <PageHero title='About' />
     <Wrapper className='page section-center'>
-<img src={aboutImg} alt="about image" />
+<img src={aboutImg} alt="about-img" />
 <article>
   <div className="title">
     <h2>our story</h2>

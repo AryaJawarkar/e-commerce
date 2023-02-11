@@ -29,6 +29,7 @@ if(error){
     })
   }
 </div>
+<Link to='/products' className='btn'>all products</Link>
   </Wrapper>
 }
 
@@ -44,7 +45,7 @@ const Wrapper = styled.section`
   }
   .btn {
     display: block;
-    width: 148px;
+    width: 248px;
     margin: 0 auto;
     text-align: center;
   }

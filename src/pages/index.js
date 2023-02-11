@@ -6,8 +6,8 @@ import Error from './ErrorPage'
 import About from './AboutPage'
 import Products from './ProductsPage'
 import SingleProduct from './SingleProductPage'
+import AuthWrapper from './AuthWrapper'
 
 
 
-
-export {Home,About,Checkout,Cart,Private,Error,Products,SingleProduct,}
+export {Home,About,Checkout,Cart,Private,Error,Products,SingleProduct,AuthWrapper}
